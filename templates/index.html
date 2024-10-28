@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .content {
+      max-width: 500px;
+      margin: auto;
+    }
+    p {
+      font-weight: bold;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes - Welcome {{ name }}</title>
+</head>
+<body>
+<div class="content">
+    <h1>Welcome, {{ name }}!</h1>
+    <p style="color: #9900FF"> Here is your daily dose of nice quotes </p>
+    <br>
+
+    <div id="quote-box">
+        <p id="quote">{{ quote["quote"] }}</p>
+        <p id="author" style="font-style: italic;">- {{ quote["author"] }}</p>
+        <span id="quote-id" hidden>{{ quote["id"] }}</span> <!-- Just to save it.... -->
+    </div>
+    <br>
+    <button onclick="getNextQuote()">Next Quote</button>
+    <button onclick="getRandomQuote()">Random Quote</button>
+    <button onclick="login()">Login</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</div>
+</body>
+</html>
